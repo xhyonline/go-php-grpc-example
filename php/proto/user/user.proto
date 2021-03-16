@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package user;
+
+option go_package="github.com/xhyonline/main/proto/user";
+
+import "basic/basic.proto";
+
+message User {
+  string Name =1;
+  int64 Age =2;
+}
+
+
+
+service UserService {
+  rpc SayHello(basic.Empty) returns (basic.Empty);
+  rpc AddUser(User) returns (User);
+}
